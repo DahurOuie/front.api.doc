@@ -12,9 +12,8 @@ tags: v8
 
 ```cs
 ...
-[IRestaurant](https://iiko.github.io/front.api.sdk/v8/html/T_Resto_Front_Api_Data_Organization_IRestaurant.htm) restaurant = PluginContext.Operations.[GetHostRestaurant](https://iiko.github.io/front.api.sdk/v8/html/M_Resto_Front_Api_IOperationService_GetHostRestaurant.htm) ();
-[AddressShowTypeSettings](https://iiko.github.io/front.api.sdk/v8/html/T_Resto_Front_Api_Data_Settings_AddressShowTypeSettings.htm) 
-addressShowTypeSettings = restaurant.[AddressShowTypeSettings](https://iiko.github.io/front.api.sdk/v8/html/T_Resto_Front_Api_Data_Settings_AddressShowTypeSettings.htm);<br>
+IRestaurant restaurant = PluginContext.Operations.GetHostRestaurant();
+AddressShowTypeSettings addressShowTypeSettings = restaurant.AddressShowTypeSettings;<br>
 ...
 ```
 
