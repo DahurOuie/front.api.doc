@@ -1,6 +1,6 @@
 ---
 
-title: Получение настроек адреса доставки.
+title: Получение настроек адреса доставки
 layout: default
 tags: v8
 ---
@@ -11,35 +11,29 @@ tags: v8
 Как получить новые настройки адреса доставки:
 
 ```cs
-...
 IRestaurant restaurant = PluginContext.Operations.GetHostRestaurant();
-AddressShowTypeSettings addressShowTypeSettings = restaurant.AddressShowTypeSettings;<br>
-...
+AddressShowTypeSettings addressShowTypeSettings = restaurant.AddressShowTypeSettings;
 ```
 
 В ``addressShowTypeSettings`` будут следующие поля:
 
-[``UseNewFormat``](https://iiko.github.io/front.api.sdk/v8/html/P_Resto_Front_Api_Data_Settings_AddressShowTypeSettings_UseNewFormat.htm) - использовать ли формат адреса доставки с полями Line1 и Line2.
+- [``UseNewFormat``](https://iiko.github.io/front.api.sdk/v8/html/P_Resto_Front_Api_Data_Settings_AddressShowTypeSettings_UseNewFormat.htm) - использовать ли формат адреса доставки с полями Line1 и Line2.
 
-[``UseLiveSearch``](https://iiko.github.io/front.api.sdk/v8/html/P_Resto_Front_Api_Data_Settings_AddressShowTypeSettings_UseLiveSearch.htm) - использовать ли живой поиск (DaData) для добавления адресов доставки на iikoFront.
+- [``UseLiveSearch``](https://iiko.github.io/front.api.sdk/v8/html/P_Resto_Front_Api_Data_Settings_AddressShowTypeSettings_UseLiveSearch.htm) - использовать ли живой поиск (DaData) для добавления адресов доставки на iikoFront.
 
-[``AddressShowType``](https://iiko.github.io/front.api.sdk/v8/html/P_Resto_Front_Api_Data_Settings_AddressShowTypeSettings_AddressShowType.htm) - какой тип отображения адреса доставки ипользуется в iikoFront и iikoOffice.
+- [``AddressShowType``](https://iiko.github.io/front.api.sdk/v8/html/P_Resto_Front_Api_Data_Settings_AddressShowTypeSettings_AddressShowType.htm) - какой тип отображения адреса доставки ипользуется в iikoFront и iikoOffice.
 
 Типы отображения адресов:
 
 LEGACY - Формат адреса с полями «Город», «Улица», «Дом», «Корпус»
 
-CITY - Формат адреса с полями «Куда везти»(Line1), «Подъезд», «Этаж» и т.д.
+CITY - Формат адреса с полями «Куда везти» (Line1), «Подъезд», «Этаж» и т.д.
 
-INTERNATIONAL -Стиль адреса в Великобритании с Line1 и Line2
+INTERNATIONAL - Стиль адреса в Великобритании с Line1 и Line2
 
 NOPOSTCODE - Стиль адреса ОАЭ.
 
 
 
-Для чего может пригодиться данный функционал:
-
-Плагин создаёт доставку на iikoFront и ему нужно понимать, может ли он использовать для создания адреса доставки поля Line1 и Line2 или нет.
-
-Для удобства разработчика и реализации других схем плагин получает все доступные поля настроек.
+Данный функционал может пригодиться для того, чтобы при создании доставки на iikoFront плагин понимал, может ли он использовать для создания адреса доставки поля Line1 и Line2 или нет.
 
